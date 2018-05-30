@@ -9,13 +9,9 @@ public class App {
 	public static void main(String[] args) {
 		staticFiles.location("public");
 		
-		get("/hello", (request, res) -> "Hello World");
-		
-		get("/hello/:name", (request, res) -> {
-			return String.format("Hello %s", request.params(":name"));
-		});
+		get("/ping", (request, res) -> "Pong");
 
-		get("/templated", (request, response) -> {
+		get("/", (request, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
 			return new HandlebarsTemplateEngine().render(new ModelAndView(attributes, "index.hbs"));
 		});
