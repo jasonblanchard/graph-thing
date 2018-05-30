@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch)-Main<spark-test>",
+            "name": "Debug (Launch)-App<spark-test>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
@@ -14,13 +14,6 @@
             "mainClass": "App",
             "projectName": "spark-test",
             "args": ""
-        },
-        {
-            "type": "java",
-            "name": "Debug (Attach)",
-            "request": "attach",
-            "hostName": "localhost",
-            "port": 0
         }
     ]
 }
