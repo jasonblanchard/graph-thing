@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,5 +12,8 @@
   "devDependencies": {
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4"
+  },
+  "dependencies": {
+    "cytoscape": "^3.2.13"
   }
 }
