@@ -13,6 +13,13 @@ public class App {
 
 		get("/", (request, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
+			Graph g = new Graph(4);
+			g.addEdge(0, 1);
+			for (int i = 0; i < g.V(); i++) {
+				for (int j : g.adj(i)) {
+					System.out.println(i + "-" + j);
+				}
+			}
 			return new HandlebarsTemplateEngine().render(new ModelAndView(attributes, "index.hbs"));
 		});
 	}
