@@ -1,0 +1,28 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "graph-thing",
+                "projectName": "graph-thing",
+                "workingDirectory": "/Users/jblanchard/projects/graph-thing",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "graph-thing",
+                "projectName": "graph-thing",
+                "workingDirectory": "/Users/jblanchard/projects/graph-thing",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
