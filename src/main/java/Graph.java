@@ -18,7 +18,7 @@ public class Graph {
     }
 
 	public int V() {
-		return V;
+		return this.V;
     }
     
     public Iterable<Integer> adj(int v) {
