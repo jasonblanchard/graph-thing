@@ -4,9 +4,14 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
+        <div>
+            <div>From: {{from}}, To: {{to}}</div>
+            <div>{{path}}</div>
+        </div>
         <div id="container"></div>
         <script>
             window.graph = JSON.parse('{{{graph}}}');
+            window.path = JSON.parse('{{{path}}}');
         </script>
         <script src="/js/app.js"></script>
     </body>

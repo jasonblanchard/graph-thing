@@ -15,7 +15,6 @@ public class App {
 			Map<String, Object> attributes = new HashMap<>();
 			Graph graph = new Graph(10);
 			graph.addEdge(0, 3);
-			graph.addEdge(0, 2);
 			graph.addEdge(0, 1);
 			graph.addEdge(1, 2);
 			graph.addEdge(2, 3);
@@ -25,6 +24,18 @@ public class App {
 			graph.addEdge(4, 7);
 			graph.addEdge(8, 6);
 			graph.addEdge(6, 2);
+			// graph.addEdge(6, 4);
+			// graph.addEdge(3, 4);
+
+			int from = 5;
+			int to = 4;
+			// int to = 9;
+			DepthFirstPaths paths = new DepthFirstPaths(graph, from);
+			Iterable<Integer> path = paths.pathTo(to);
+			attributes.put("path", path);
+			attributes.put("from", from);
+			attributes.put("to", to);
+
 			attributes.put("graph", graph.toJSON());
 			System.out.println(graph.toJSON());
 			return new HandlebarsTemplateEngine().render(new ModelAndView(attributes, "index.hbs"));
