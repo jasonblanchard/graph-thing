@@ -33,7 +33,13 @@ dependencies {
         'org.junit.jupiter:junit-jupiter-engine:5.1.0'
     )
 
+    compile 'org.json:json:20171018'
+
     compile 'com.sparkjava:spark-core:2.3'
     compile 'com.sparkjava:spark-template-handlebars:2.7.1'
+
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.3'
 }
 

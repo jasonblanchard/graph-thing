@@ -1,4 +1,11 @@
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 public class Graph {
     private final int V;
@@ -23,5 +30,45 @@ public class Graph {
     
     public Iterable<Integer> adj(int v) {
         return adj.get(v);
+    }
+
+    public String toJSON() {
+        HashMap<String, ArrayList> object = new HashMap<String, ArrayList>();
+        ArrayList nodes = new ArrayList<>();
+        ArrayList edges = new ArrayList<>();
+
+        for (int i = 0; i < this.V(); i++) {
+            HashMap<String, Integer> node = new HashMap<String, Integer>();
+            node.put("id", i);
+            nodes.add(node);
+        }
+
+        for (int i = 0; i < this.V(); i++) {
+            for (int j : this.adj(i)) {
+                HashMap<String, Integer> edge = new HashMap<String, Integer>();
+                edge.put("from", i);
+                edge.put("to", j);
+                edges.add(edge);
+            }
+        }
+        
+        object.put("nodes", nodes);
+        object.put("edges", edges);
+
+        String json = "";
+        ObjectWriter ow = new ObjectMapper().writer();
+        try {
+			json = ow.writeValueAsString(object);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return json;
     }
 }
