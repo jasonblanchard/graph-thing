@@ -33,9 +33,9 @@ public class Graph {
     }
 
     public String toJSON() {
-        HashMap<String, ArrayList> object = new HashMap<String, ArrayList>();
-        ArrayList nodes = new ArrayList<>();
-        ArrayList edges = new ArrayList<>();
+        HashMap<String, ArrayList<HashMap<String, Integer>>> object = new HashMap<String, ArrayList<HashMap<String, Integer>>>();
+        ArrayList<HashMap<String, Integer>> nodes = new ArrayList<>();
+        ArrayList<HashMap<String, Integer>> edges = new ArrayList<>();
 
         for (int i = 0; i < this.V(); i++) {
             HashMap<String, Integer> node = new HashMap<String, Integer>();
