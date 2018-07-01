@@ -1,13 +1,13 @@
 import java.util.Stack;
 
-public class DepthFirstPaths implements Paths { // TODO: Move to DepthFirstPaths and implement a Paths interface.
+public class DepthFirstPaths implements Paths {
     private boolean[] marked;
     private int[] edgeTo;
     private int s;
 
     public DepthFirstPaths(Graph g, int s) {
         this.marked = new boolean[g.V()];
-        this.edgeTo = new int[10]; // TODO: Calculate number of edges in Graph
+        this.edgeTo = new int[g.maxEdges()];
         this.s = s;
         dfs(g, s);
     }

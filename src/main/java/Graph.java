@@ -27,6 +27,10 @@ public class Graph {
 	public int V() {
 		return this.V;
     }
+
+    public int maxEdges() {
+        return (this.V() * (this.V() - 1)) / 2;
+    }
     
     public Iterable<Integer> adj(int v) {
         return adj.get(v);

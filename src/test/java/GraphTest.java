@@ -9,6 +9,12 @@ public class GraphTest {
     }
 
     @Test
+    public void maxEdges() {
+        Graph graph = new Graph(4);
+        assertEquals(6, graph.maxEdges());
+    }
+
+    @Test
     public void addingEdges() {
         Graph graph = new Graph(4);
         graph.addEdge(0, 1);
