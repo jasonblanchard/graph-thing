@@ -13,13 +13,20 @@ public class App {
 
 		get("/", (request, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
-			Graph g = new Graph(4);
-			g.addEdge(0, 1);
-			for (int i = 0; i < g.V(); i++) {
-				for (int j : g.adj(i)) {
-					System.out.println(i + "-" + j);
-				}
-			}
+			Graph graph = new Graph(10);
+			graph.addEdge(0, 3);
+			graph.addEdge(0, 2);
+			graph.addEdge(0, 1);
+			graph.addEdge(1, 2);
+			graph.addEdge(2, 3);
+			graph.addEdge(2, 5);
+			graph.addEdge(8, 4);
+			graph.addEdge(7, 1);
+			graph.addEdge(4, 7);
+			graph.addEdge(8, 6);
+			graph.addEdge(6, 2);
+			attributes.put("graph", graph.toJSON());
+			System.out.println(graph.toJSON());
 			return new HandlebarsTemplateEngine().render(new ModelAndView(attributes, "index.hbs"));
 		});
 	}

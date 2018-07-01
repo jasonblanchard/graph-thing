@@ -1,39 +1,13 @@
 import cytoscape from 'cytoscape';
 
+const nodeElements = window.graph.nodes.map(node => ({ data: { id: node.id } }));
+const edgeElements = window.graph.edges.map(edge => ({ data: { id: `${edge.from}_${edge.to}`, source: edge.from, target: edge.to } }));
+const elements = [...nodeElements, ...edgeElements];
+console.log(elements);
+
 var cy = cytoscape({
     container: document.getElementById('container'),
-    elements: [
-      {
-        data: { id: 'a' }
-      },
-      {
-        data: { id: 'b' }
-      },
-      {
-        data: { id: 'c' }
-      },
-      {
-        data: { id: 'd' }
-      },
-      {
-        data: { id: 'e' }
-      },
-      {
-        data: { id: 'ab', source: 'a', target: 'b' }
-      },
-      {
-        data: { id: 'ad', source: 'a', target: 'd' }
-      },
-      {
-        data: { id: 'ac', source: 'a', target: 'c' }
-      },
-      {
-        data: { id: 'bc', source: 'b', target: 'd' }
-      },
-      {
-        data: { id: 'ed', source: 'e', target: 'd' }
-      }
-    ],
+    elements,
     style: [ // the stylesheet for the graph
       {
         selector: 'node',
