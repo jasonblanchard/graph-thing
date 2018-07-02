@@ -1,5 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
+
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -31,7 +33,7 @@ public class App {
 			int to = 4;
 			// int to = 9;
 			DepthFirstPaths paths = new DepthFirstPaths(graph, from);
-			Iterable<Integer> path = paths.pathTo(to);
+			Iterable<Integer> path = paths.hasPathTo(to) ? paths.pathTo(to) : new Stack<Integer>();
 			attributes.put("path", path);
 			attributes.put("from", from);
 			attributes.put("to", to);
