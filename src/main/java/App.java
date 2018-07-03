@@ -26,13 +26,16 @@ public class App {
 			graph.addEdge(4, 7);
 			graph.addEdge(8, 6);
 			graph.addEdge(6, 2);
-			// graph.addEdge(6, 4);
-			// graph.addEdge(3, 4);
 
-			int from = 5;
+			// Graph graph = new Graph(4);
+			// graph.addEdge(0, 1);
+			// graph.addEdge(0, 2);
+			// graph.addEdge(2, 3);
+
+			int from = 2;
 			int to = 4;
-			// int to = 9;
-			DepthFirstPaths paths = new DepthFirstPaths(graph, from);
+			// // DepthFirstPaths paths = new DepthFirstPaths(graph, from);
+			BreadthFirstPaths paths = new BreadthFirstPaths(graph, from);
 			Iterable<Integer> path = paths.hasPathTo(to) ? paths.pathTo(to) : new Stack<Integer>();
 			attributes.put("path", path);
 			attributes.put("from", from);
